@@ -1,0 +1,8 @@
+<h1>Random pictures of dogs</h1>
+<i *ngIf="errorMessage !== null">{{errorMessage}}</i>
+<ng-container *ngIf="errorMessage === null">
+  <p>{{ dogPictures.length }} pictures of dogs were found</p>
+  <dog *ngFor="let picture of dogPictures" [picture]="picture" [breed]="getBreed(picture)" >
+  </dog>
+</ng-container>
+
